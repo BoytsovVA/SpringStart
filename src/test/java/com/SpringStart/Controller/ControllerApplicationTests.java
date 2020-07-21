@@ -1,20 +1,35 @@
 package com.SpringStart.Controller;
 
+
 import com.SpringStart.Controller.services.BuisnessServices;
+import org.assertj.core.api.Assert;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.ApplicationContext;
+
 
 @SpringBootTest
 class ControllerApplicationTests {
+	@Autowired
+	BuisnessServices buisnessServices;
+
+	@Autowired
+	ApplicationContext ctx;
+
+//	@Autowired
+//	Controller1 controller1;
+//	@Test
+//	void contextLoads() {
+//	}
 
 	@Test
-	void contextLoads() {
-	}
+	public void	getX1 () {
 
-//	@Test
-//	public void	getX1 () {
-//		BuisnessServices buisnessServices = new BuisnessServices();
-//		System.out.println(buisnessServices.getX1("http://localhost:8080/index?param=1,2,3");
-//
-//	}
+		Double ans = buisnessServices.getX1(1D, 20D, 3D);
+		//BuisnessServices bs = (BuisnessServices) ctx.getBean("buisnessServices");
+		//return buisnessServices.getX1(a, b, c).toString();
+//		controller1.ftl();
+//		assert 1!=1;
+	}
 }
