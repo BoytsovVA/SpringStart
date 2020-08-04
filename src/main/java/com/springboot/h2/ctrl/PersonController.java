@@ -32,13 +32,13 @@ public class PersonController {
         return "person";
     }
 
-    @RequestMapping("search")
+    @RequestMapping(value = "search", method = RequestMethod.POST)
     public String search(@RequestParam(name = "searchquery") String searchquery) {
         personViewBean.setNameQuery(searchquery);
         return "redirect:/index";
     }
 
-    @RequestMapping("save")
+    @RequestMapping(value = "save", method = RequestMethod.POST)
     public String save(@RequestParam(name = "id", required = false) Long id,
                        @RequestParam(name = "name", required = false, defaultValue = "test") String name,
                        @RequestParam(name = "age", required = false, defaultValue = "0") Integer age) {
@@ -48,13 +48,12 @@ public class PersonController {
     }
 
     @RequestMapping("getall")
-    public String getAll(Model model) {
-        List<Person> personList = personService.getAll();
-        personViewBean.setPersonList(personList);
+    public String getAll() {
+        personViewBean.setNameQuery(null);
         return "redirect:/index";
     }
 
-    @RequestMapping("delete")
+    @RequestMapping(value = "delete", method = RequestMethod.POST)
     public String delete(@RequestParam(name = "deletequery") String deletequery) {
         personService.deletePerson(deletequery);
         return "redirect:/index";
