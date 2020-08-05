@@ -1,0 +1,6 @@
+com/springboot/h2/Appmain.class
+com/springboot/h2/ctrl/PersonController.class
+com/springboot/h2/repo/PersonRepository.class
+com/springboot/h2/model/Person.class
+com/springboot/h2/model/PersonViewBean.class
+com/springboot/h2/serv/PersonService.class
